@@ -12,3 +12,10 @@ img text,
 content text,
 author_id int references heloUsers(id)
 )
+
+alter table users
+alter column password
+set data type text;
+
+select * from users;
+select * from posts;

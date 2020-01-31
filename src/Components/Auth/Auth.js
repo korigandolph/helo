@@ -4,8 +4,8 @@ import {connect} from 'react-redux';
 import {getUser} from '../../ducks/reducer';
 
 class Auth extends Component {
-    constructor(props){
-        super(props)
+    constructor(){
+        super()
         
         this.state ={
             username: '',
@@ -35,20 +35,27 @@ class Auth extends Component {
     }
 
     render(){
+        // const {username, password } = this.state
         return(
             <div className = 'Auth'>Helo
+                <div>Username:
                 <input 
+                    
                     name='username'
-                    // value= {this.state.username}
+                    value= {this.state.username}
                     placeholder = 'username'
                     onChange={(e)=>this.handleChange(e.target)}
                 />
+                </div>
+                <div>Password: 
                 <input 
                     name = 'password'
-                    // value = {this.state.password}
+                    value = {this.state.password}
                     placeholder = 'password'
+                    type = 'password'
                     onChange={(e)=>this.handleChange(e.target)}
                 />
+                </div>
                 <button onClick = {()=>this.handleLogin()}>Login</button>
                 <button onClick = {()=>this.handleRegister()}>Register</button>
             </div>
